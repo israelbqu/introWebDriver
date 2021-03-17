@@ -30,9 +30,7 @@ public class practiceone {
         campoRepeat = driver.findElement(By.cssSelector("[name='repeat_password']")),
         button = driver.findElement(By.cssSelector(".btn"));
 
-        for (int i = 0; i < 10; i++) {
-            campoUsuario.sendKeys("Israel.Bibiano" + i);
-        }
+        campoUsuario.sendKeys("Israel.Bibiano" + 2);
         campoPassword.sendKeys("prueba123");
         campoRepeat.sendKeys("prueba1234");
 
@@ -43,6 +41,7 @@ public class practiceone {
         }
         else{
             System.out.println("Prueba completada sin contraseñas iguales");
+            driver.quit();
         }
 
 

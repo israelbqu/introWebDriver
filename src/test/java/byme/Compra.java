@@ -54,7 +54,7 @@ public class Compra {
             System.out.println("La prueba fue exitosa.");
         }
         else{
-            System.out.println("Valió mae");
+            System.out.println("La prueba no fue exitosa");
         }
 
     }
