@@ -1,5 +1,6 @@
 package byme;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class practiceone {
     static WebDriver driver;
 
+
     public static void main(String[] args) {
+        String password = "prueba123";
 //Abrir el navegador
         driver = new ChromeDriver();
         //Navegar a la página
@@ -30,24 +33,17 @@ public class practiceone {
         campoRepeat = driver.findElement(By.cssSelector("[name='repeat_password']")),
         button = driver.findElement(By.cssSelector(".btn"));
 
-        campoUsuario.sendKeys("Israel.Bibiano" + 2);
-        campoPassword.sendKeys("prueba123");
-        campoRepeat.sendKeys("prueba1234");
 
 
-        if(campoPassword == campoRepeat){
+        campoUsuario.sendKeys("Israel.Bibiano" + 3);
+        campoPassword.sendKeys(password);
+        campoRepeat.sendKeys(password);
         button.click();
-            System.out.println("El registro se creó exitosamente");
+
+        WebElement LogIn = driver.findElement(By.cssSelector(".container"));
+
+        if(LogIn.isDisplayed()){
+            System.out.println("El usuario ya está registrado.");
         }
-        else{
-            System.out.println("Prueba completada sin contraseñas iguales");
-            driver.quit();
-        }
-
-
-
-
-
-
     }
 }
